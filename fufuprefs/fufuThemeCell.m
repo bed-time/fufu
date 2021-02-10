@@ -45,14 +45,6 @@
     return self;
 }
 
--(instancetype)initWithFrame:(CGRect)frame {
-    frame.origin.x = frame.origin.x + 10;
-    frame.size.width = frame.size.width - 20;
-    self.contentView.frame = frame;
-
-    return self;
-}
-
 -(instancetype)initWithSpecifier:(PSSpecifier *)specifier {
 	self = [self initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil specifier:specifier];
 	return self;
