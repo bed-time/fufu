@@ -1,0 +1,10 @@
+Package: luv.bedtime.fufu
+Name: Fufu
+Architecture: iphoneos-arm
+Description: An awesome MobileSubstrate tweak!
+Maintainer: bedtime
+Author: bedtime
+Section: Tweaks
+Depends: mobilesubstrate (>= 0.9.5000)
+Version: 0.0.1-232+debug
+Installed-Size: 1200
