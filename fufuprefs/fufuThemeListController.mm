@@ -27,14 +27,16 @@
 				PSSpecifier* specifier = [PSSpecifier preferenceSpecifierNamed:themeName target:self set:nil get:nil detail:nil cell:PSLinkListCell edit:nil];
 				[specifier setProperty:[fufuThemeCell class] forKey:@"cellClass"];
                 [specifier setProperty:@YES forKey:@"enabled"];
-				[specifier setProperty:[NSNumber numberWithInt:76] forKey:@"height"];
+				[specifier setProperty:[NSNumber numberWithInt:66] forKey:@"height"];
 				[specifier setProperty:[UIImage imageWithContentsOfFile:[NSString stringWithFormat:@"/Library/Application Support/Fufu/%@.fufu/50.png", themeName]] forKey:@"iconImage"];
 				[_specifiers addObject:specifier];
 
 				//Make seperator
-				PSSpecifier* seperator = [PSSpecifier preferenceSpecifierNamed:@" " target:nil set:nil get:nil detail:nil cell:PSGroupCell edit:nil];
-				[seperator setProperty:[NSNumber numberWithInt:5] forKey:@"height"];
-				[_specifiers addObject:seperator];
+				PSSpecifier* sep = [PSSpecifier preferenceSpecifierNamed:themeName target:self set:nil get:nil detail:nil cell:PSLinkListCell edit:nil];
+				[sep setProperty:[fufuSeperatorCell class] forKey:@"cellClass"];
+                [sep setProperty:@YES forKey:@"enabled"];
+				[sep setProperty:[NSNumber numberWithInt:6] forKey:@"height"];
+				[_specifiers addObject:sep];
         	}
 		}
 	}

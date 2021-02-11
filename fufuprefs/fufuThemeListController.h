@@ -5,6 +5,7 @@
 #import <Cephei/HBPreferences.h>
 #import <Preferences/PSTableCell.h>
 #import "fufuThemeCell.h"
+#import "fufuSeperatorCell.h"
 
 @interface fufuThemeListController : PSListController
 @end

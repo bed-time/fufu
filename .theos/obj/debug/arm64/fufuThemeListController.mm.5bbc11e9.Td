@@ -10,7 +10,7 @@
   /home/adam/theos/vendor/lib/CepheiPrefs.framework/Headers/PSListController+HBTintAdditions.h \
   /home/adam/theos/vendor/lib/CepheiPrefs.framework/Headers/HBAppearanceSettings.h \
   /home/adam/theos/vendor/lib/Cephei.framework/Headers/HBPreferences.h \
-  fufuThemeCell.h
+  fufuThemeCell.h fufuSeperatorCell.h
 
 /home/adam/theos/Prefix.pch:
 
@@ -35,3 +35,5 @@ fufuThemeListController.h:
 /home/adam/theos/vendor/lib/Cephei.framework/Headers/HBPreferences.h:
 
 fufuThemeCell.h:
+
+fufuSeperatorCell.h:

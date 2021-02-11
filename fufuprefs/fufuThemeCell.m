@@ -17,10 +17,12 @@
         themeImage = [[UIImageView alloc] initWithImage:specifier.properties[@"iconImage"]];
         themeImage.frame = CGRectMake(0 - inset, 0 - inset, self.bounds.size.height + (inset*4), self.bounds.size.height + (inset*4));
         themeImage.contentMode = UIViewContentModeScaleAspectFill;
+        themeImage.userInteractionEnabled = NO;
 
         icon = [[UIImageView alloc] initWithImage:specifier.properties[@"iconImage"]];
-        icon.frame = CGRectMake(10, 10, 56, 56);
+        icon.frame = CGRectMake(11, 11, 46, 46);
         icon.contentMode = UIViewContentModeScaleAspectFill;
+        icon.userInteractionEnabled = NO;
 
         //blur
         UIVisualEffect *blurEffect;
@@ -29,6 +31,7 @@
 
         //inserting
         blur.frame = CGRectMake(0, 0, self.bounds.size.width * 2, 76);
+        blur.userInteractionEnabled = NO;
         [self.contentView addSubview:themeImage];
         [self.contentView.superview addSubview:blur];
         [blur.subviews[0] addSubview:icon];
@@ -39,8 +42,13 @@
         self.imageView.hidden = YES;
 
         self.clipsToBounds = YES;
-        self.layer.cornerRadius = 36;
-        icon.layer.cornerRadius = 26;
+        icon.layer.shadowRadius  = 10.0f;
+        icon.layer.shadowColor   = [UIColor blackColor].CGColor;
+        icon.layer.shadowOffset  = CGSizeMake(0.0f, 0.0f);
+        icon.layer.shadowOpacity = 0.4f;
+        icon.layer.masksToBounds = NO;
+
+        //gesture to enable
     }
     return self;
 }
