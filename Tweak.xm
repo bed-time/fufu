@@ -60,16 +60,11 @@ NSInteger YScaling = (float)[uY integerValue];
 
 	int Percent = floor(percent * 100);
 
-	if (Percent > 90)                  { [FufuView setImage:[UIImage imageWithContentsOfFile:[NSString stringWithFormat:@"%@/batt/100.png", themebatt]]]; }
-	if (Percent <= 90 && Percent > 80) { [FufuView setImage:[UIImage imageWithContentsOfFile:[NSString stringWithFormat:@"%@/batt/90.png", themebatt]]]; }
-	if (Percent <= 80 && Percent > 70) { [FufuView setImage:[UIImage imageWithContentsOfFile:[NSString stringWithFormat:@"%@/batt/80.png", themebatt]]]; }
-	if (Percent <= 70 && Percent > 60) { [FufuView setImage:[UIImage imageWithContentsOfFile:[NSString stringWithFormat:@"%@/batt/70.png", themebatt]]]; }
-	if (Percent <= 60 && Percent > 50) { [FufuView setImage:[UIImage imageWithContentsOfFile:[NSString stringWithFormat:@"%@/batt/60.png", themebatt]]]; }
-	if (Percent <= 50 && Percent > 40) { [FufuView setImage:[UIImage imageWithContentsOfFile:[NSString stringWithFormat:@"%@/batt/50.png", themebatt]]]; }
-	if (Percent <= 40 && Percent > 30) { [FufuView setImage:[UIImage imageWithContentsOfFile:[NSString stringWithFormat:@"%@/batt/40.png", themebatt]]]; }
-	if (Percent <= 30 && Percent > 20) { [FufuView setImage:[UIImage imageWithContentsOfFile:[NSString stringWithFormat:@"%@/batt/30.png", themebatt]]]; }
-	if (Percent <= 20 && Percent > 10) { [FufuView setImage:[UIImage imageWithContentsOfFile:[NSString stringWithFormat:@"%@/batt/20.png", themebatt]]]; }
-	if (Percent < 10)                  { [FufuView setImage:[UIImage imageWithContentsOfFile:[NSString stringWithFormat:@"%@/batt/10.png", themebatt]]]; }
+	NSString *path = [NSString stringWithFormat:@"%@/batt/%d.png", themebatt, (int)lroundf(Percent)];
+
+	if ([[NSFileManager defaultManager] fileExistsAtPath:path]) {
+		[FufuView setImage:[UIImage imageWithContentsOfFile:path]];
+	}
 
 
 	self.pinColor = UIColor.clearColor;
@@ -87,8 +82,5 @@ NSInteger YScaling = (float)[uY integerValue];
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 %ctor {
-  dpkgInvalid = ![[NSFileManager defaultManager] fileExistsAtPath:@"/var/lib/dpkg/info/luv.bedtime.fufu.list"];
-  if (!dpkgInvalid) dpkgInvalid = ![[NSFileManager defaultManager] fileExistsAtPath:@"/var/lib/dpkg/info/luv.bedtime.fufu.md5sums"];
-
   loadPreferences();
 }
