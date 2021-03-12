@@ -18,22 +18,123 @@
     		<string>DevBedtime</string>
 		</dict>
 
+		<!---
+			Battery
+		-->
+
 		<dict>
 			<key>cell</key>
 			<string>PSGroupCell</string>
-			<key>label</key>
-			<string>select a theme</string>
 		</dict>
+
 		<dict>
 			<key>cell</key>
 			<string>PSLinkCell</string>
 			<key>detail</key>
-			<string>fufuThemeListController</string>
+			<string>BatteryListController</string>
 			<key>isController</key>
 			<true/>
 			<key>label</key>
-			<string>Themes</string>
-	</dict>
+			<string>Battery</string>
+			<key>icon</key>
+			<string>batt.png</string>
+		</dict>
+
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>label</key>
+			<string>Hide Bolt</string>
+			<key>default</key>
+			<false/>
+			<key>defaults</key>
+			<string>luv.bedtime.FufuPrefs</string>
+			<key>key</key>
+			<string>hide</string>
+		</dict>
+
+		<dict>
+			<key>cellClass</key>
+			<string>LabelSlider</string>
+			<key>label</key>
+			<string>X Scaling</string>
+
+			<key>isSegmented</key>
+			<true/>
+
+			<key>defaults</key>
+			<string>luv.bedtime.FufuPrefs</string>
+			<key>key</key>
+			<string>x</string>
+
+			<key>min</key>
+			<real>-20</real>
+			<key>max</key>
+			<real>20</real>
+		</dict>
+		<dict>
+			<key>cellClass</key>
+			<string>LabelSlider</string>
+			<key>label</key>
+			<string>Y Scaling</string>
+
+			<key>isSegmented</key>
+			<true/>
+
+			<key>defaults</key>
+			<string>luv.bedtime.FufuPrefs</string>
+			<key>key</key>
+			<string>y</string>
+
+			<key>min</key>
+			<real>-20</real>
+			<key>max</key>
+			<real>20</real>
+		</dict>
+
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+		</dict>
+
+		<dict>
+			<key>cell</key>
+			<string>PSLinkCell</string>
+			<key>detail</key>
+			<string>ComingSoonListController</string>
+			<key>isController</key>
+			<true/>
+			<key>label</key>
+			<string>Wifi</string>
+			<key>icon</key>
+			<string>wifi.png</string>
+		</dict>
+
+		<dict>
+			<key>cell</key>
+			<string>PSLinkCell</string>
+			<key>detail</key>
+			<string>ComingSoonListController</string>
+			<key>isController</key>
+			<true/>
+			<key>label</key>
+			<string>LTE</string>
+			<key>icon</key>
+			<string>lte.png</string>
+		</dict>
+
+		<dict>
+			<key>cell</key>
+			<string>PSLinkCell</string>
+			<key>detail</key>
+			<string>ComingSoonListController</string>
+			<key>isController</key>
+			<true/>
+			<key>label</key>
+			<string>Cellular</string>
+			<key>icon</key>
+			<string>cell.png</string>
+		</dict>
 	</array>
 	<key>title</key>
 	<string> </string>
